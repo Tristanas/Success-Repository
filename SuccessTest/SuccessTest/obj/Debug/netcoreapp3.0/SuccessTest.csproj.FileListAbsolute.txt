@@ -1,0 +1,11 @@
+C:\Users\Vilius\source\repos\SuccessTest\SuccessTest\bin\Debug\netcoreapp3.0\SuccessTest.exe
+C:\Users\Vilius\source\repos\SuccessTest\SuccessTest\bin\Debug\netcoreapp3.0\SuccessTest.deps.json
+C:\Users\Vilius\source\repos\SuccessTest\SuccessTest\bin\Debug\netcoreapp3.0\SuccessTest.runtimeconfig.json
+C:\Users\Vilius\source\repos\SuccessTest\SuccessTest\bin\Debug\netcoreapp3.0\SuccessTest.runtimeconfig.dev.json
+C:\Users\Vilius\source\repos\SuccessTest\SuccessTest\bin\Debug\netcoreapp3.0\SuccessTest.dll
+C:\Users\Vilius\source\repos\SuccessTest\SuccessTest\bin\Debug\netcoreapp3.0\SuccessTest.pdb
+C:\Users\Vilius\source\repos\SuccessTest\SuccessTest\obj\Debug\netcoreapp3.0\SuccessTest.csprojAssemblyReference.cache
+C:\Users\Vilius\source\repos\SuccessTest\SuccessTest\obj\Debug\netcoreapp3.0\SuccessTest.AssemblyInfoInputs.cache
+C:\Users\Vilius\source\repos\SuccessTest\SuccessTest\obj\Debug\netcoreapp3.0\SuccessTest.AssemblyInfo.cs
+C:\Users\Vilius\source\repos\SuccessTest\SuccessTest\obj\Debug\netcoreapp3.0\SuccessTest.dll
+C:\Users\Vilius\source\repos\SuccessTest\SuccessTest\obj\Debug\netcoreapp3.0\SuccessTest.pdb
