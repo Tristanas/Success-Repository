@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vilius\\source\\repos\\SuccessTest\\SuccessTest\\SuccessTest.csproj": {}
+    "C:\\Users\\Vilius\\Documents\\GitHub\\Success-Repository\\SuccessTest\\SuccessTest\\SuccessTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vilius\\source\\repos\\SuccessTest\\SuccessTest\\SuccessTest.csproj": {
+    "C:\\Users\\Vilius\\Documents\\GitHub\\Success-Repository\\SuccessTest\\SuccessTest\\SuccessTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vilius\\source\\repos\\SuccessTest\\SuccessTest\\SuccessTest.csproj",
+        "projectUniqueName": "C:\\Users\\Vilius\\Documents\\GitHub\\Success-Repository\\SuccessTest\\SuccessTest\\SuccessTest.csproj",
         "projectName": "SuccessTest",
-        "projectPath": "C:\\Users\\Vilius\\source\\repos\\SuccessTest\\SuccessTest\\SuccessTest.csproj",
+        "projectPath": "C:\\Users\\Vilius\\Documents\\GitHub\\Success-Repository\\SuccessTest\\SuccessTest\\SuccessTest.csproj",
         "packagesPath": "C:\\Users\\Vilius\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vilius\\source\\repos\\SuccessTest\\SuccessTest\\obj\\",
+        "outputPath": "C:\\Users\\Vilius\\Documents\\GitHub\\Success-Repository\\SuccessTest\\SuccessTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

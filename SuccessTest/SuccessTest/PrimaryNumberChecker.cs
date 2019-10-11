@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SuccessTest
 {
-    class PrimaryNumberChecker
+    public class PrimaryNumberChecker
     {
         public bool isPrimary(int number)
         {
