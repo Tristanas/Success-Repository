@@ -18,6 +18,13 @@ namespace PrimaryNumberCheckerTest
             Assert.False(checker.isPrimary(1));
         }
 
+
+        [Test]
+        public void NegativeShouldNotBePrimary()
+        {
+            Assert.False(checker.isPrimary(-7790));
+        }
+
         [Test]
         public void EvenNumbersPrimaryCheck()
         {
