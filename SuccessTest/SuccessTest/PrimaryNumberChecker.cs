@@ -22,5 +22,10 @@ namespace SuccessTest
         {
             return strategy.getPrimaryNumbers(intervalStart, intervalEnd);
         }
+
+        public void setStrategy(IPrimaryCheckingStrategy strategy)
+        {
+            this.strategy = strategy;
+        }
     }
 }

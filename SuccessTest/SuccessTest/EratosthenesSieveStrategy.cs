@@ -12,11 +12,12 @@ namespace SuccessTest
         {
             this.maximumNumber = max;
             primaryNumbers = new List<int>();
-            generatePrimaryNumbers();
         }
 
         public IList<int> getPrimaryNumbers(int intervalStart, int intervalEnd)
         {
+            if (primaryNumbers.Count == 0)
+                generatePrimaryNumbers();
             List<int> primes = new List<int>();
             foreach (int prime in primaryNumbers)
             {
@@ -36,6 +37,8 @@ namespace SuccessTest
             return primaryNumbers.Contains(number);
         }
 
+        // This is awfully inefficient. Eratosthenes sieve actually requires no division.
+        // And not each element should be iterated.
         private void generatePrimaryNumbers()
         {
             List<int> numbers = new List<int>();
