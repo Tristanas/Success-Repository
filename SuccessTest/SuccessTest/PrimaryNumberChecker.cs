@@ -17,5 +17,10 @@ namespace SuccessTest
         {
             return strategy.isPrimary(number);
         }
+
+        public IList<int> getPrimaryNumbers(int intervalStart, int intervalEnd)
+        {
+            return strategy.getPrimaryNumbers(intervalStart, intervalEnd);
+        }
     }
 }

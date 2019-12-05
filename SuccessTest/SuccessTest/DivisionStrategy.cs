@@ -16,12 +16,22 @@ namespace SuccessTest
                 return false;
             }
 
-            for (int i = 3; i < number; i += 2)
+            for (int i = 3; i < Math.Floor(Math.Sqrt(i)); i += 2)
             {
                 if (number % i == 0)
                     return false;
             }
             return true;
+        }
+
+        public IList<int> getPrimaryNumbers(int intervalStart, int intervalEnd)
+        {
+            List<int> primaryNumbers = new List<int>();
+            for (int i = intervalStart; i <= intervalEnd; i++)
+            {
+                if (isPrimary(i)) primaryNumbers.Add(i);
+            }
+            return primaryNumbers;
         }
     }
 }
