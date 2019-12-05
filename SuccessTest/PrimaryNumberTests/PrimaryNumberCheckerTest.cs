@@ -9,7 +9,7 @@ namespace PrimaryNumberCheckerTest
         [SetUp]
         public void Setup()
         {
-            checker = new PrimaryNumberChecker();
+            checker = new PrimaryNumberChecker(new DivisionStrategy());
         }
 
         [Test]

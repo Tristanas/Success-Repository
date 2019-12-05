@@ -21,9 +21,9 @@ namespace SuccessTest
                 return;
             }
 
-            PrimaryNumberChecker checker = new PrimaryNumberChecker();
+            PrimaryNumberChecker checker = new PrimaryNumberChecker(new DivisionStrategy());
 
-            Console.WriteLine($"Primary numbers in the range: [{1}, {2}]", start, finish);
+            Console.WriteLine($"Primary numbers in the range: [{start}, {finish}]");
             for (int i = start; i <= finish; i++)
             {
                 if (checker.isPrimary(i)) Console.WriteLine(i);    

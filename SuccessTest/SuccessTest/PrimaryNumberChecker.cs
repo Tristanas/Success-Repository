@@ -6,22 +6,16 @@ namespace SuccessTest
 {
     public class PrimaryNumberChecker
     {
+        IPrimaryCheckingStrategy strategy;
+
+        public PrimaryNumberChecker(IPrimaryCheckingStrategy strategy)
+        {
+            this.strategy = strategy;
+        }
+
         public bool isPrimary(int number)
         {
-            if (number <= 1)
-                return false;
-
-            if (number % 2 == 0 && number != 2)
-            {
-                return false;
-            }
-            
-            for (int i = 3; i < number; i += 2)
-            {
-                if (number % i == 0)
-                    return false;
-            }
-            return true;
+            return strategy.isPrimary(number);
         }
     }
 }
