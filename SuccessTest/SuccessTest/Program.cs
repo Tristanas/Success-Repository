@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SuccessTest
 {
@@ -21,12 +22,13 @@ namespace SuccessTest
                 return;
             }
 
-            PrimaryNumberChecker checker = new PrimaryNumberChecker(new DivisionStrategy());
+            PrimaryNumberChecker checker = new PrimaryNumberChecker(new EratosthenesSieveStrategy(finish));
 
             Console.WriteLine($"Primary numbers in the range: [{start}, {finish}]");
-            for (int i = start; i <= finish; i++)
+            IList<int> primaryNumbers = checker.getPrimaryNumbers(start, finish);
+            foreach(int number in primaryNumbers)
             {
-                if (checker.isPrimary(i)) Console.WriteLine(i);    
+                Console.WriteLine(number);
             }
         }
     }
