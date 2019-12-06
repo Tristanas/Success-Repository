@@ -23,28 +23,36 @@ namespace SuccessTest
                 return;
             }
 
-            PrimaryNumberChecker checker = new PrimaryNumberChecker(new EratosthenesSieveStrategy(finish));
+            //printPrimesInRange(start, finish);
+            for (int i = 1; i < 6; i++)
+            {
+                compareMethods((int)Math.Pow(10, i));
+            }
+            
+        }
 
+        static void printPrimesInRange(int start, int finish)
+        {
+            PrimaryNumberChecker checker = new PrimaryNumberChecker(new EratosthenesSieveStrategy(finish));
             Console.WriteLine($"Primary numbers in the range: [{start}, {finish}]");
             IList<int> primaryNumbers = checker.getPrimaryNumbers(start, finish);
-            foreach(int number in primaryNumbers)
+            foreach (int number in primaryNumbers)
             {
                 Console.WriteLine(number);
             }
-            // compareMethods();
         }
 
-        static void compareMethods()
+        static void compareMethods(int multiplicator)
         {
             Stopwatch watch = new Stopwatch();
-            int start = 500000, finish = 1000000;
+            int start = 10 * multiplicator, finish = 100 * multiplicator;
             IPrimaryCheckingStrategy divisionStrat = new DivisionStrategy(),
                 eratosthenesStrat = new EratosthenesSieveStrategy(finish);
 
-            PrimaryNumberChecker checker = new PrimaryNumberChecker(divisionStrat);
-            checkDuration(checker, watch, divisionStrat.GetType().ToString(), start, finish);
-            checker.setStrategy(eratosthenesStrat);
+            PrimaryNumberChecker checker = new PrimaryNumberChecker(eratosthenesStrat);
             checkDuration(checker, watch, eratosthenesStrat.GetType().ToString(), start, finish);
+            checker.setStrategy(divisionStrat);
+            checkDuration(checker, watch, divisionStrat.GetType().ToString(), start, finish);
         }
 
         static void checkDuration(PrimaryNumberChecker checker, Stopwatch watch, string strategy, int start, int finish)

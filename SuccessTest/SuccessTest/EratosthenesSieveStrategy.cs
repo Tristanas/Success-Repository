@@ -38,8 +38,6 @@ namespace SuccessTest
             return primaryNumbers.Contains(number);
         }
 
-        // This is awfully inefficient. Eratosthenes sieve actually requires no division.
-        // And not each element should be iterated. When removing multiples.
         private void generatePrimaryNumbers()
         {
             int[] numbers = new int[maximumNumber + 1];
