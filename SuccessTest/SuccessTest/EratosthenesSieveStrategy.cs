@@ -7,10 +7,11 @@ namespace SuccessTest
     class EratosthenesSieveStrategy : IPrimaryCheckingStrategy
     {
         int maximumNumber;
-        IList<int> primaryNumbers;
+        List<int> primaryNumbers;
         public EratosthenesSieveStrategy(int max)
         {
-            this.maximumNumber = max;
+            // Adding 1 to make the interval inclusive.
+            this.maximumNumber = max + 1;
             primaryNumbers = new List<int>();
         }
 
@@ -38,26 +39,45 @@ namespace SuccessTest
         }
 
         // This is awfully inefficient. Eratosthenes sieve actually requires no division.
-        // And not each element should be iterated.
+        // And not each element should be iterated. When removing multiples.
         private void generatePrimaryNumbers()
         {
-            List<int> numbers = new List<int>();
+            int[] numbers = new int[maximumNumber + 1];
             // Populating the list with all potential primary numbers.
-            int newPrime = 3;
             primaryNumbers.Add(2);
-            primaryNumbers.Add(newPrime);
             // Not even adding even numbers.
             for (int i = 3; i <= maximumNumber; i += 2)
             {
-                numbers.Add(i);
+                numbers[i] = i;
             }
 
-            while (numbers.Count > 0)
+            int currentPrime = 3;
+            do
             {
-                numbers.RemoveAll(number => number % newPrime == 0);
-                newPrime = numbers[0];
-                primaryNumbers.Add(newPrime);
-                numbers.RemoveAt(0);
+                primaryNumbers.Add(currentPrime); 
+                removeAllMultiples(numbers, currentPrime);
+                currentPrime = findNextPrime(numbers, currentPrime);
+            } while (currentPrime != 0);
+        }
+
+        // Navigates through the array which models an Eratosthenes sieve. Looks for the next prime.
+        // Returns 0 if end of array is reached.
+        private int findNextPrime(int[] array, int prime)
+        {
+            int nextPrime = prime + 1;
+            while (array[nextPrime] == 0)
+            {
+                if (++nextPrime >= maximumNumber)
+                    return 0;
+            }
+            return nextPrime;
+        }
+
+        private void removeAllMultiples(int[] array, int number)
+        {
+            for (int i = number * 2; i <= maximumNumber; i += number)
+            {
+                array[i] = 0;
             }
         }
     }

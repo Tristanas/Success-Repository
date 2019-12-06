@@ -23,15 +23,15 @@ namespace SuccessTest
                 return;
             }
 
-            /*PrimaryNumberChecker checker = new PrimaryNumberChecker(new EratosthenesSieveStrategy(finish));
+            PrimaryNumberChecker checker = new PrimaryNumberChecker(new EratosthenesSieveStrategy(finish));
 
             Console.WriteLine($"Primary numbers in the range: [{start}, {finish}]");
             IList<int> primaryNumbers = checker.getPrimaryNumbers(start, finish);
             foreach(int number in primaryNumbers)
             {
                 Console.WriteLine(number);
-            }*/
-            compareMethods();
+            }
+            // compareMethods();
         }
 
         static void compareMethods()
