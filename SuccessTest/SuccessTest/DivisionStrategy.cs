@@ -6,7 +6,7 @@ namespace SuccessTest
 {
     public class DivisionStrategy: IPrimaryCheckingStrategy
     {
-        public bool isPrimary(int number)
+        public bool isPrime(int number)
         {
             if (number <= 1)
                 return false;
@@ -24,12 +24,14 @@ namespace SuccessTest
             return true;
         }
 
-        public IList<int> getPrimaryNumbers(int intervalStart, int intervalEnd)
+        public IList<int> getPrimes(int intervalStart, int intervalEnd)
         {
             List<int> primaryNumbers = new List<int>();
+            // Could improve performance here twice by adding a special case for [2, b]:
+            // add 2 to primes and iterate over every second element starting from 3.
             for (int i = intervalStart; i <= intervalEnd; i++)
             {
-                if (isPrimary(i)) primaryNumbers.Add(i);
+                if (isPrime(i)) primaryNumbers.Add(i);
             }
             return primaryNumbers;
         }

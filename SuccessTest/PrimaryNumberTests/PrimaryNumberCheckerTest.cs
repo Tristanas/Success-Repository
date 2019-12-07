@@ -1,9 +1,9 @@
 using NUnit.Framework;
 using SuccessTest;
 
-namespace PrimaryNumberCheckerTest
+namespace PrimaryNumberTests
 {
-    public class Tests
+    public class PrimaryNumberCheckerTest
     {
         PrimaryNumberChecker checker;
         [SetUp]
@@ -15,30 +15,30 @@ namespace PrimaryNumberCheckerTest
         [Test]
         public void OneIsNotPrimary()
         {
-            Assert.False(checker.isPrimary(1));
+            Assert.False(checker.isPrime(1));
         }
 
 
         [Test]
         public void NegativeShouldNotBePrimary()
         {
-            Assert.False(checker.isPrimary(-7790));
+            Assert.False(checker.isPrime(-7790));
         }
 
         [Test]
         public void EvenNumbersPrimaryCheck()
         {
-            Assert.True(checker.isPrimary(2));
+            Assert.True(checker.isPrime(2));
             for (int i = 4; i < 100; i += 2)
             {
-                Assert.False(checker.isPrimary(i));
+                Assert.False(checker.isPrime(i));
             }
         }
 
         [Test]
         public void PrimaryNumberShouldReturnTrue()
         {
-            Assert.True(checker.isPrimary(7919));
+            Assert.True(checker.isPrime(7919));
         }
     }
 }

@@ -4,8 +4,8 @@ namespace SuccessTest
 {
     public interface IPrimaryCheckingStrategy
     {
-        bool isPrimary(int number);
+        bool isPrime(int number);
 
-        IList<int> getPrimaryNumbers(int intervalStart, int intervalEnd);
+        IList<int> getPrimes(int intervalStart, int intervalEnd);
     }
 }

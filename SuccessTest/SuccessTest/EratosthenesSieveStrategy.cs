@@ -4,78 +4,75 @@ using System.Text;
 
 namespace SuccessTest
 {
-    class EratosthenesSieveStrategy : IPrimaryCheckingStrategy
+    public class EratosthenesSieveStrategy : IPrimaryCheckingStrategy
     {
         int maximumNumber;
-        List<int> primaryNumbers;
+        List<int> primes;
         public EratosthenesSieveStrategy(int max)
         {
             // Adding 1 to make the interval inclusive.
             this.maximumNumber = max + 1;
-            primaryNumbers = new List<int>();
+            primes = new List<int>();
         }
 
-        public IList<int> getPrimaryNumbers(int intervalStart, int intervalEnd)
+        public IList<int> getPrimes(int intervalStart, int intervalEnd)
         {
-            if (primaryNumbers.Count == 0)
+            if (this.primes.Count == 0)
                 generatePrimaryNumbers();
             List<int> primes = new List<int>();
-            foreach (int prime in primaryNumbers)
+            foreach (int prime in this.primes)
             {
+                if (prime > intervalEnd)
+                    break;
                 if (prime >= intervalStart)
                     primes.Add(prime);
             }
             return primes;
         }
 
-        public bool isPrimary(int number)
+        public bool isPrime(int number)
         {
             if (number > maximumNumber)
             {
                 Console.WriteLine("Warning, checking a number that is higher than the highest checked number");
                 return false;
             }
-            return primaryNumbers.Contains(number);
+            return primes.Contains(number);
         }
 
         private void generatePrimaryNumbers()
         {
-            int[] numbers = new int[maximumNumber + 1];
+            short[] numbers = new short[maximumNumber + 1];
             // Populating the list with all potential primary numbers.
-            primaryNumbers.Add(2);
+            numbers[2] = 1;
             // Not even adding even numbers.
             for (int i = 3; i <= maximumNumber; i += 2)
             {
-                numbers[i] = i;
+                numbers[i] = 1;
             }
 
-            int currentPrime = 3;
-            do
+            for (int i = 3; i <= maximumNumber; i += 2)
             {
-                primaryNumbers.Add(currentPrime); 
-                removeAllMultiples(numbers, currentPrime);
-                currentPrime = findNextPrime(numbers, currentPrime);
-            } while (currentPrime != 0);
-        }
-
-        // Navigates through the array which models an Eratosthenes sieve. Looks for the next prime.
-        // Returns 0 if end of array is reached.
-        private int findNextPrime(int[] array, int prime)
-        {
-            int nextPrime = prime + 1;
-            while (array[nextPrime] == 0)
-            {
-                if (++nextPrime >= maximumNumber)
-                    return 0;
+                if (numbers[i] != 0)
+                {
+                    for (int j = 2; i * j <= maximumNumber; j++)
+                    {
+                        numbers[i * j] = 0;
+                    }
+                }
             }
-            return nextPrime;
+
+            getPrimesFromSieve(numbers);
         }
 
-        private void removeAllMultiples(int[] array, int number)
+        private void getPrimesFromSieve(short[] numbers)
         {
-            for (int i = number * 2; i <= maximumNumber; i += number)
+            for (int i = 1; i <= maximumNumber; i++)
             {
-                array[i] = 0;
+                if (numbers[i] != 0)
+                {
+                    primes.Add(i);
+                }
             }
         }
     }

@@ -13,14 +13,14 @@ namespace SuccessTest
             this.strategy = strategy;
         }
 
-        public bool isPrimary(int number)
+        public bool isPrime(int number)
         {
-            return strategy.isPrimary(number);
+            return strategy.isPrime(number);
         }
 
         public IList<int> getPrimaryNumbers(int intervalStart, int intervalEnd)
         {
-            return strategy.getPrimaryNumbers(intervalStart, intervalEnd);
+            return strategy.getPrimes(intervalStart, intervalEnd);
         }
 
         public void setStrategy(IPrimaryCheckingStrategy strategy)

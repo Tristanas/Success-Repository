@@ -2,7 +2,7 @@
   "profiles": {
     "SuccessTest": {
       "commandName": "Project",
-      "commandLineArgs": "500000 501000"
+      "commandLineArgs": "20 1000"
     }
   }
 }

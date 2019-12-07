@@ -23,11 +23,11 @@ namespace SuccessTest
                 return;
             }
 
-            //printPrimesInRange(start, finish);
-            for (int i = 1; i < 6; i++)
-            {
-                compareMethods((int)Math.Pow(10, i));
-            }
+            printPrimesInRange(start, finish);
+            //for (int i = 1; i < 6; i++)
+            //{
+            //    compareMethods((int)Math.Pow(10, i));
+            //}
             
         }
 
